@@ -1,31 +1,241 @@
-Build a responsive web application called OPI 4.0.
 
-OPI stands for Physics Research Assistant.
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OPI 4.0 | Physics Research</title>
+<style>
+* { box-sizing: border-box; }
 
-Target device: iPad Air.
-Platform: Web application, optimized for Safari.
+body {
+  margin: 0;
+  background: #080d18;
+  color: #e5edff;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
 
-Design:
-- Dark scientific interface
-- Black/navy background
-- Cyan and violet accents
-- Minimal, sophisticated research laboratory aesthetic
+header {
+  padding: 28px 24px;
+  border-bottom: 1px solid #25344c;
+  background: #0c1424;
+}
 
-Main sections:
-1. AI Research Chat
-2. Equation Laboratory
-3. Experiment Dashboard
-4. Research Notebook
-5. Settings
+.logo {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 5px;
+  color: #8bdcff;
+}
 
-Requirements:
-- Responsive iPad layout
-- Korean language interface
-- Mathematical equation rendering
-- Graph visualization
-- Persistent research notes
-- Online AI integration prepared through a secure backend
-- Never expose API keys in frontend code
+.subtitle {
+  color: #758ba9;
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-top: 7px;
+}
 
-Create a functional first version.
-Do not use placeholder buttons for core navigation.
+main {
+  max-width: 950px;
+  margin: auto;
+  padding: 28px 22px;
+}
+
+.status {
+  color: #66d9a5;
+  font-size: 12px;
+  margin-bottom: 35px;
+}
+
+h2 {
+  font-size: 21px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.card {
+  background: #111d30;
+  border: 1px solid #263b58;
+  border-radius: 15px;
+  padding: 22px;
+  min-height: 125px;
+}
+
+.card:hover {
+  border-color: #62bfe8;
+}
+
+.number {
+  font-size: 11px;
+  color: #6caed0;
+  letter-spacing: 2px;
+}
+
+.card h3 {
+  font-size: 16px;
+  color: #b5e5ff;
+  margin: 12px 0 8px;
+}
+
+.card p {
+  font-size: 12px;
+  color: #899bb5;
+  line-height: 1.6;
+}
+
+.console {
+  margin-top: 35px;
+  padding: 22px;
+  background: #111d30;
+  border: 1px solid #263b58;
+  border-radius: 15px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 115px;
+  resize: vertical;
+  background: #080f1d;
+  border: 1px solid #304663;
+  border-radius: 10px;
+  padding: 15px;
+  color: white;
+  font-size: 15px;
+  outline: none;
+}
+
+textarea:focus {
+  border-color: #65c7ef;
+}
+
+button {
+  margin-top: 12px;
+  padding: 13px 24px;
+  border: 0;
+  border-radius: 9px;
+  background: #176b91;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:active {
+  opacity: 0.7;
+}
+
+#response {
+  margin-top: 20px;
+  padding: 14px;
+  color: #a9c9df;
+  font-size: 13px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+footer {
+  margin-top: 45px;
+  padding-top: 20px;
+  border-top: 1px solid #25344c;
+  color: #526780;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+@media(max-width: 480px) {
+  .grid { grid-template-columns: 1fr; }
+  .logo { font-size: 25px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">OPI 4.0</div>
+  <div class="subtitle">PHYSICS RESEARCH ASSISTANT</div>
+</header>
+
+<main>
+
+<div class="status">● SYSTEM INTERFACE INITIALIZED</div>
+
+<h2>Research Laboratory</h2>
+
+<div class="grid">
+
+  <div class="card">
+    <div class="number">01 / RESEARCH</div>
+    <h3>AI Research</h3>
+    <p>Physics research and theoretical analysis.</p>
+  </div>
+
+  <div class="card">
+    <div class="number">02 / EQUATIONS</div>
+    <h3>Equation Laboratory</h3>
+    <p>Mathematical equations and calculations.</p>
+  </div>
+
+  <div class="card">
+    <div class="number">03 / EXPERIMENT</div>
+    <h3>Experiment Dashboard</h3>
+    <p>Arduino sensors and experimental data.</p>
+  </div>
+
+  <div class="card">
+    <div class="number">04 / RECORDS</div>
+    <h3>Research Notebook</h3>
+    <p>Research notes and observations.</p>
+  </div>
+
+</div>
+
+<section class="console">
+
+<h2>Research Console</h2>
+
+<textarea id="question"
+placeholder="물리학 연구 질문을 입력하세요..."></textarea>
+
+<button onclick="ask()">SUBMIT QUERY</button>
+
+<div id="response">
+OPI interface ready.
+</div>
+
+</section>
+
+<footer>
+OPI 4.0 · PHYSICS RESEARCH SYSTEM
+</footer>
+
+</main>
+
+<script>
+function ask() {
+  const question = document
+    .getElementById("question")
+    .value.trim();
+
+  const response = document
+    .getElementById("response");
+
+  if (!question) {
+    response.textContent = "질문을 입력해 주세요.";
+    return;
+  }
+
+  response.textContent =
+    "QUERY RECEIVED\n\n" +
+    question +
+    "\n\nAI engine is not connected yet.";
+}
+</script>
+
+</body>
+</html>
