@@ -3,239 +3,155 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OPI 4.0 | Physics Research</title>
 <style>
 * { box-sizing: border-box; }
-
 body {
   margin: 0;
   background: #080d18;
   color: #e5edff;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: -apple-system, sans-serif;
 }
-
 header {
-  padding: 28px 24px;
-  border-bottom: 1px solid #25344c;
-  background: #0c1424;
+  padding: 25px 22px;
+  border-bottom: 1px solid #202b40;
 }
-
-.logo {
-  font-size: 30px;
-  font-weight: 800;
-  letter-spacing: 5px;
+h1 {
+  margin: 0;
+  font-size: 27px;
+  letter-spacing: 3px;
   color: #8bdcff;
 }
-
-.subtitle {
-  color: #758ba9;
-  font-size: 11px;
-  letter-spacing: 3px;
-  margin-top: 7px;
-}
-
-main {
-  max-width: 950px;
-  margin: auto;
-  padding: 28px 22px;
-}
-
+header p { color: #788ba8; font-size: 12px; }
+main { padding: 22px; max-width: 850px; margin: auto; }
 .status {
-  color: #66d9a5;
+  color: #70dfb0;
   font-size: 12px;
-  margin-bottom: 35px;
+  margin-bottom: 28px;
 }
-
-h2 {
-  font-size: 21px;
-  font-weight: 600;
-  margin-bottom: 18px;
-}
-
-.grid {
+h2 { font-size: 19px; }
+.cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  grid-template-columns: repeat(2,1fr);
+  gap: 12px;
 }
-
 .card {
-  background: #111d30;
-  border: 1px solid #263b58;
-  border-radius: 15px;
-  padding: 22px;
-  min-height: 125px;
+  background: #111c30;
+  border: 1px solid #253651;
+  border-radius: 14px;
+  padding: 19px;
+  min-height: 110px;
 }
-
-.card:hover {
-  border-color: #62bfe8;
+.card h3 { color: #8bdcff; margin-top: 0; }
+.card p { color: #91a3be; font-size: 13px; }
+.chat {
+  margin-top: 25px;
+  background: #111c30;
+  padding: 18px;
+  border-radius: 14px;
 }
-
-.number {
-  font-size: 11px;
-  color: #6caed0;
-  letter-spacing: 2px;
-}
-
-.card h3 {
-  font-size: 16px;
-  color: #b5e5ff;
-  margin: 12px 0 8px;
-}
-
-.card p {
-  font-size: 12px;
-  color: #899bb5;
-  line-height: 1.6;
-}
-
-.console {
-  margin-top: 35px;
-  padding: 22px;
-  background: #111d30;
-  border: 1px solid #263b58;
-  border-radius: 15px;
-}
-
 textarea {
   width: 100%;
-  min-height: 115px;
-  resize: vertical;
-  background: #080f1d;
-  border: 1px solid #304663;
-  border-radius: 10px;
-  padding: 15px;
+  height: 100px;
+  background: #080d18;
+  border: 1px solid #30415e;
+  border-radius: 9px;
+  padding: 12px;
   color: white;
   font-size: 15px;
-  outline: none;
+  resize: vertical;
 }
-
-textarea:focus {
-  border-color: #65c7ef;
-}
-
 button {
-  margin-top: 12px;
-  padding: 13px 24px;
-  border: 0;
-  border-radius: 9px;
   background: #176b91;
   color: white;
-  font-weight: 600;
-  cursor: pointer;
+  border: 0;
+  padding: 12px 20px;
+  border-radius: 9px;
+  margin-top: 10px;
+  font-size: 14px;
 }
-
-button:active {
-  opacity: 0.7;
-}
-
 #response {
-  margin-top: 20px;
-  padding: 14px;
-  color: #a9c9df;
-  font-size: 13px;
-  line-height: 1.7;
   white-space: pre-wrap;
+  color: #a9c9df;
+  line-height: 1.6;
 }
-
 footer {
-  margin-top: 45px;
-  padding-top: 20px;
-  border-top: 1px solid #25344c;
-  color: #526780;
+  margin-top: 35px;
+  color: #52647e;
   font-size: 11px;
-  letter-spacing: 1px;
-}
-
-@media(max-width: 480px) {
-  .grid { grid-template-columns: 1fr; }
-  .logo { font-size: 25px; }
 }
 </style>
 </head>
-
 <body>
-
 <header>
-  <div class="logo">OPI 4.0</div>
-  <div class="subtitle">PHYSICS RESEARCH ASSISTANT</div>
+  <h1>OPI 4.0</h1>
+  <p>PHYSICS RESEARCH ASSISTANT</p>
 </header>
-
 <main>
-
-<div class="status">● SYSTEM INTERFACE INITIALIZED</div>
-
-<h2>Research Laboratory</h2>
-
-<div class="grid">
-
-  <div class="card">
-    <div class="number">01 / RESEARCH</div>
-    <h3>AI Research</h3>
-    <p>Physics research and theoretical analysis.</p>
+  <div class="status">● SYSTEM INTERFACE INITIALIZED</div>
+  <h2>Research Laboratory</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>01 / AI RESEARCH</h3>
+      <p>Physics research and theoretical analysis</p>
+    </div>
+    <div class="card">
+      <h3>02 / EQUATION LAB</h3>
+      <p>Equations and mathematical calculations</p>
+    </div>
+    <div class="card">
+      <h3>03 / EXPERIMENT</h3>
+      <p>Arduino sensor data and experiments</p>
+    </div>
+    <div class="card">
+      <h3>04 / NOTEBOOK</h3>
+      <p>Research records and observations</p>
+    </div>
   </div>
-
-  <div class="card">
-    <div class="number">02 / EQUATIONS</div>
-    <h3>Equation Laboratory</h3>
-    <p>Mathematical equations and calculations.</p>
-  </div>
-
-  <div class="card">
-    <div class="number">03 / EXPERIMENT</div>
-    <h3>Experiment Dashboard</h3>
-    <p>Arduino sensors and experimental data.</p>
-  </div>
-
-  <div class="card">
-    <div class="number">04 / RECORDS</div>
-    <h3>Research Notebook</h3>
-    <p>Research notes and observations.</p>
-  </div>
-
-</div>
-
-<section class="console">
-
-<h2>Research Console</h2>
-
-<textarea id="question"
-placeholder="물리학 연구 질문을 입력하세요..."></textarea>
-
-<button onclick="ask()">SUBMIT QUERY</button>
-
-<div id="response">
-OPI interface ready.
-</div>
-
-</section>
-
-<footer>
-OPI 4.0 · PHYSICS RESEARCH SYSTEM
-</footer>
-
+  <section class="chat">
+    <h2>Research Console</h2>
+    <textarea id="question"
+      placeholder="물리학 연구 질문을 입력하세요..."></textarea>
+    <button onclick="ask()">SUBMIT QUERY</button>
+    <p id="response">OPI interface ready.</p>
+  </section>
+  <footer>OPI 4.0 · PHYSICS RESEARCH SYSTEM</footer>
 </main>
-
 <script>
 function ask() {
-  const question = document
-    .getElementById("question")
-    .value.trim();
-
-  const response = document
-    .getElementById("response");
-
-  if (!question) {
-    response.textContent = "질문을 입력해 주세요.";
+  const q = document.getElementById("question").value.trim();
+  const r = document.getElementById("response");
+  if (!q) {
+    r.textContent = "질문을 입력해 주세요.";
     return;
   }
-
-  response.textContent =
-    "QUERY RECEIVED\n\n" +
-    question +
-    "\n\nAI engine is not connected yet.";
+  r.textContent =
+    "질문이 입력되었습니다.\n\n" +
+    q +
+    "\n\nAI 연결은 다음 개발 단계에서 진행합니다.";
 }
 </script>
+<script>
+const WORKER_URL = "여기에_Cloudflare_Worker_주소";
 
+async function askOPI(message) {
+  const response = await fetch(WORKER_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ message })
+  });
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.error || "AI 연결 오류");
+  }
+
+  return data.reply;
+}
+</script>
 </body>
 </html>
